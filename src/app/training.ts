@@ -22,7 +22,7 @@ function formatText(str: string, format: string): string {
       return str
         .trim()
         .split(/\s+/)
-        .map(w => {
+        .map((w:string) => {
           return w[0].toUpperCase() + w.slice(1).toLowerCase();
         })
         .join(" ");
@@ -32,15 +32,15 @@ function formatText(str: string, format: string): string {
 }
 
 function removeSymbol(str: string, s: string): string {
-  if(s.length != 1) throw new TypeError();
+  if (s.length != 1) throw new TypeError();
   return str.replaceAll(s , "");
 }
 
 let uploadStatus: "loading" | "success" | "error";
 let textFormat: "uppercase" | "lowercase" | "capitalize";
 let users: IUser[] = [
-  {name: "Adam", age: 9999999},
-  {name: "John", age: 0, isPotato: true},
+  { name: "Adam", age: 9999999 },
+  { name: "John", age: 0, isPotato: true },
 ]
 
 users.sort((a, b) => a.age - b.age);
