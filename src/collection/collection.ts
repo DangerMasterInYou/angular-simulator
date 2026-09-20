@@ -1,13 +1,9 @@
 export class Collection<T> {
+
   private _items: T[] = [];
 
   constructor(items: T[]){
     this._items = items;
-  }
-
-  private _checkExistEl(id: number): void {
-    if(id < 0 || id >= this._items.length || this._items[id] == null)
-      throw new Error(`Элемент по индексу ${id} не существует.`);
   }
 
   getAll(): T[] {
@@ -36,4 +32,10 @@ export class Collection<T> {
     if (!(id < 0)) this._items[id] = newItem;
     console.log(this._items[id]);
   }
+
+  private _checkExistEl(id: number): void {
+    if (id < 0 || id >= this._items.length || this._items[id] == null)
+      throw new Error(`Элемент по индексу ${id} не существует.`);
+  }
+
 }
