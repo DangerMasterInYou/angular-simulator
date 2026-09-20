@@ -1,1 +1,70 @@
-<h1 style="display: flex; justify-content: center; font-family: sans-serif;">NGX SIMULATOR</h1>
+<main>
+  <div class="hero-container">
+    <header>
+      <div class="container header__inner-wrapper">
+        <div class="logo">
+          <img src="/images/logo.svg">
+          <p>РУМТИБЕТ</p>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#search-programm">Главная</a></li>
+            <li><a href="#guide">Про гида</a></li>
+            <li><a href="#programm">Программа тура</a></li>
+            <li><a href="#price">Стоимость</a></li>
+            <li><a href="#blog">Блог</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="btn" id="consult-btn">Консультация</button>
+      </div>
+    </header>
+    <section id="search-programm" class="container">
+      <h1>Насладись прогулкой в горах<br>
+          с командой единомышленников</h1>
+      <form action="" method="post" class="search-programm-form">
+        <div>
+          <div class="input-container">
+            <input type="text" placeholder="Локация для тура" name="location">
+            <img src="/images/dropdown.svg" alt="">
+          </div>
+          <label for="location">выберите из списка</label>
+        </div>
+        <div>
+          <div class="input-container">
+            <input type="text" placeholder="Дата похода" name="date">
+            <img src="/images/calendar.svg" alt="">
+          </div>
+          <label for="date">укажите дату</label>
+        </div>
+        <div>
+          <div class="input-container">
+            <input type="text" placeholder="Участники" name="participants">
+            <img src="/images/dropdown.svg" alt="">
+          </div>
+          <label for="participants">выберите из списка</label>
+        </div>
+        <button type="submit" id="search-programm-btn">Найти программу</button>
+      </form>
+    </section>
+  </div>
+  <section id="guide" class="container">
+    <div class="guide__images">
+      <img src="/images/content/guide/snowMountain.jpg" alt="">
+      <div class="layer-top">
+        <img src="/images/content/play.svg" alt="" class="icon-play">
+        <img src="/images/content/guide/houseOnMountain.jpg" alt="">
+      </div>
+    </div>
+    <div class="description">
+      <div class="subtitle">
+        <h3>о нашем походе</h3>
+        <h2>{{ guideSubtitle }}</h2>
+      </div>
+      <p>{{ guideDesc }}</p>
+      <a href="#programm">
+        <button class="content-btn">Программа тура</button>
+      </a>
+    </div>
+  </section>
+</main>
