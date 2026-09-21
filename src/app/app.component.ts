@@ -20,7 +20,7 @@ export class AppComponent {
   }
 
   isPrimaryColor (color: string): boolean{
-    return (this._primaryColors).includes(color);
+    return this._primaryColors.includes(color);
   }
 
   private _setLastDateSignIn(): void {
