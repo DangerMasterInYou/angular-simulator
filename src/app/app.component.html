@@ -1,1 +1,89 @@
-<h1 style="display: flex; justify-content: center; font-family: sans-serif;">NGX SIMULATOR</h1>
+<main>
+  <div class="hero-container">
+    <header>
+      <div class="container header__inner-wrapper">
+        <div class="logo">
+          <img src="/images/logo-icon.svg">
+          <p>РУМТИБЕТ</p>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="#search-programm" id="nav-home-link">Главная</a>
+            </li>
+            <li>
+              <a href="#guide" id="nav-guide-link">Про гида</a>
+            </li>
+            <li>
+              <a href="#programm" id="nav-programm-link">Программа тура</a>
+            </li>
+            <li>
+              <a href="#price" id="nav-price-link">Стоимость</a>
+            </li>
+            <li>
+              <a href="#blog" id="nav-blog-link">Блог</a>
+            </li>
+            <li>
+              <a href="#contacts" id="nav-contacts-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <button type="button" class="btn" id="consult-btn">Консультация</button>
+      </div>
+    </header>
+    <section id="search-programm" class="container">
+      <h1>Насладись прогулкой в горах<br>
+          с командой единомышленников</h1>
+      <form action="" method="post" class="search-programm-form">
+        <div>
+          <div class="input-container">
+            <input type="text" placeholder="Локация для тура" name="location" id="location-input">
+            <img src="/images/dropdown-icon.svg" alt="" id="location-dropdown-picker">
+          </div>
+          <label for="location-input">выберите из списка</label>
+        </div>
+        <div>
+          <div class="input-container">
+            <input type="text" placeholder="Дата похода" name="date" id="date-input">
+            <img src="/images/calendar-icon.svg" alt="" id="date-calendar-picker">
+          </div>
+          <label for="date-input">укажите дату</label>
+        </div>
+        <div>
+          <div class="input-container">
+            <input type="text" placeholder="Участники" name="participants" id="participants-input">
+            <img src="/images/dropdown-icon.svg" alt="" id="participants-dropdown-picker">
+          </div>
+          <label for="participants-input">выберите из списка</label>
+        </div>
+        <button type="submit" id="search-programm-btn">Найти программу</button>
+      </form>
+    </section>
+  </div>
+  <section id="guide" class="container">
+    <div class="guide__images">
+      <img src="/images/content/guide/snowMountain.jpg" alt="">
+      <div class="layer-top">
+        <img src="/images/content/play-icon.svg" alt="" class="play-btn" id="play-btn">
+        <img src="/images/content/guide/houseOnMountain.jpg" alt="">
+      </div>
+    </div>
+    <div class="description">
+      <div class="subtitle">
+        <h3>о нашем походе</h3>
+        <h2>Исследуйте все горные массивы мира вместе с нами</h2>
+      </div>
+      <p>
+        Его корни уходят в один фрагмент классической латыни 45 года
+        н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+        профессор латыни из колледжа Hampden-Sydney, штат
+        Вирджиния, взял одно из самых странных слов в Lorem Ipsum,
+        "consectetur" и занялся его поисками в классической латинской
+        литературе.
+      </p>
+      <a href="#programm" id="content-link">
+        <button class="content-btn" id="content-btn">Программа тура</button>
+      </a>
+    </div>
+  </section>
+</main>
