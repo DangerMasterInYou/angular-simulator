@@ -37,5 +37,3 @@ export class Collection<T> {
   }
 
 }
-
-// file for review

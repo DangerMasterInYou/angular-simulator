@@ -8,7 +8,5 @@ import { IUser } from './training';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-
+  companyName: string = 'РумТибет';
 }
-
-// file for review

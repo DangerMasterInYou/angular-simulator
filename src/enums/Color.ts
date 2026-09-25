@@ -5,5 +5,3 @@ export enum Colors {
   DARK = 'DARK',
   WHITE = 'WHITE',
 }
-
-// file for review
