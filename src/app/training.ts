@@ -43,5 +43,7 @@ let users: IUser[] = [
   { name: "John", age: 0, isPotato: true },
 ]
 
-users.sort((a, b) => a.age - b.age);
-users.sort((a, b) => a.name.localeCompare(b.name));
+const sortedByAge = [...users].sort((a, b) => a.age - b.age);
+const sortedByName = [...users].sort((a, b) => a.name.localeCompare(b.name));
+
+// file for review
