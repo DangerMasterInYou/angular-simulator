@@ -26,6 +26,7 @@
 .container {
   display: block;
   width: 1180px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -72,12 +73,7 @@ button {
   background-color: var(--primary-btn-color);
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-
-
-// body {
-//   background-repeat: no-repeat;
-//   background-size: 790px 697px;
-//   background-position: 25% top;
-// }
+// ref file
