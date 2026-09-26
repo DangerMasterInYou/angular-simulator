@@ -46,3 +46,4 @@ let users: IUser[] = [
 const sortedByAge = [...users].sort((a, b) => a.age - b.age);
 const sortedByName = [...users].sort((a, b) => a.name.localeCompare(b.name));
 
+// ref file

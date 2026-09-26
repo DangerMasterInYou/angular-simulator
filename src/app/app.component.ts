@@ -10,3 +10,5 @@ import { IUser } from './training';
 export class AppComponent {
   companyName: string = 'РумТибет';
 }
+
+// ref file
