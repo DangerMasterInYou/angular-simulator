@@ -32,35 +32,77 @@
       </div>
     </header>
     <section id="search-programm" class="container">
-      <h1>Насладись прогулкой в горах<br>
-          с командой единомышленников</h1>
-      <form action="" method="post" class="search-programm-form">
-        <div>
+      <h1>
+        Насладись прогулкой в горах
+        <br>
+        с командой единомышленников
+      </h1>
+      <form
+        [formGroup]="searchForm"
+        (ngSubmit)="onSubmit()"
+        class="search-programm-form"
+        autocomplete="off"
+        novalidate
+      >
+        <inp-sel
+          [items]="locations"
+          [(value)]="selectedLocation"
+          placeholder="Локация"
+          [class.error-text]="isLocationInvalid"
+        ></inp-sel>
+
+        <div [class.error-text]="isDateInvalid">
           <div class="input-container">
-            <input type="text" placeholder="Локация для тура" name="location" id="location-input">
-            <img src="/images/dropdown-icon.svg" alt="" id="location-dropdown-picker">
-          </div>
-          <label for="location-input">выберите из списка</label>
-        </div>
-        <div>
-          <div class="input-container">
-            <input type="text" placeholder="Дата похода" name="date" id="date-input">
-            <img src="/images/calendar-icon.svg" alt="" id="date-calendar-picker">
+            <input
+              panelClass="custom-datepicker-overlay"
+              [matDatepicker]="hiddenPicker"
+              [formControl]="calendarControl"
+              class="matInputHidden"
+            >
+            <input
+              id="date-input"
+              [formControl]="searchForm.controls.date"
+              mask="00.00.0000"
+              [dropSpecialCharacters]="false"
+              placeholder="Дата похода"
+            >
+            <img
+              src="/images/calendar-icon.svg"
+              alt="Календарь"
+              (click)="openCalendar()"
+            >
+            <mat-datepicker #hiddenPicker panelClass="custom-datepicker-overlay"></mat-datepicker>
           </div>
           <label for="date-input">укажите дату</label>
         </div>
-        <div>
-          <div class="input-container">
-            <input type="text" placeholder="Участники" name="participants" id="participants-input">
-            <img src="/images/dropdown-icon.svg" alt="" id="participants-dropdown-picker">
-          </div>
-          <label for="participants-input">выберите из списка</label>
-        </div>
-        <button type="submit" id="search-programm-btn">Найти программу</button>
+
+        <inp-sel
+          [items]="participants"
+          [(value)]="selectedParticipants"
+          [multiple]="true"
+          placeholder="Участники"
+          [class.error-text]="isParticipantsInvalid"
+        ></inp-sel>
+
+        <pre style="position:fixed;bottom:0;left:0;z-index:9999;background:#222;color:#0f0;padding:8px;font-size:11px;">
+  searchForm.valid: {{ searchForm.valid }}
+  date value: [{{ searchForm.controls.date.value }}]
+  date errors: [{{ searchForm.controls.date.errors }}]
+  selectedLocation: [{{ selectedLocation }}]
+  participants count: {{ selectedParticipants?.length }}
+  participants: [{{ selectedParticipants }}]
+  isLocationInvalid: [{{ isLocationInvalid }}]
+  isDateInvalid: [{{ isDateInvalid }}]
+  isParticipantsInvalid: [{{ isParticipantsInvalid }}]
+</pre>
+
+        <button type="submit" id="search-programm-btn" [disabled]="!isFormValid">
+          Найти программу
+        </button>
       </form>
     </section>
   </div>
-  <section id="guide" class="container">
+  <section id="guide" class="guide-wrap container">
     <div class="guide__images">
       <img src="/images/content/guide/snowMountain.jpg" alt="">
       <div class="layer-top">
@@ -86,6 +128,41 @@
       </a>
     </div>
   </section>
+  <section id="programm" class="container-filled">
+    <div class="programm-wrap container">
+      <div class="description">
+        <div class="subtitle">
+          <h3>наше предложение</h3>
+          <h2>Лучшие программы для тебя</h2>
+        </div>
+        <p>
+          Его корни уходят в один фрагмент классической латыни 45
+          года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+          профессор латыни из колледжа.
+        </p>
+        <ul>
+          @for (advantage of advantages; track advantage.id) {
+            <li class="li-container">
+              <img [src]='advantage.img_url' alt="">
+              <div>
+                <h4>{{ advantage.title }}</h4>
+                <p>{{ advantage.description }}</p>
+              </div>
+            </li>
+          } @empty {
+            <p>Пусто</p>
+          }
+        </ul>
+        <a href="#price" id="content-link">
+          <button class="content-btn" id="content-btn">Программа тура</button>
+        </a>
+      </div>
+      <div class="programm__images">
+        <img src="/images/content/programm/cofeeWaterfall.jpg" class="left-diagonal-img">
+        <img src="/images/content/programm/hills.jpg" class="right-diagonal-img">
+        <img src="/images/content/programm/snowmobile.jpg" class="right-diagonal-img">
+        <img src="/images/content/programm/riverFork.jpg" class="left-diagonal-img">
+      </div>
+    </div>
+  </section>
 </main>
-
-// ref file

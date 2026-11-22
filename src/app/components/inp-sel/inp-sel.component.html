@@ -1,0 +1,38 @@
+<div class="inp-sel-wrapper">
+  <div class="input-container">
+    <input
+      type="text"
+      [id]="inputId"
+      [value]="inputValue"
+      (input)="onInput($any($event.target).value)"
+      [placeholder]="placeholder"
+    />
+    <img
+      [src]="iconSrc"
+      class="dropdown-picker"
+      (click)="toggle()"
+    />
+  </div>
+
+  <label [for]="inputId">{{ hint }}</label>
+
+  @if (open) {
+    <select
+      class="dropdown"
+      [id]="selectId"
+      [multiple]="multiple"
+      [size]="selectSize"
+      (change)="onSelectChange($event)"
+      (mousedown)="onSelectMousedown($event)"
+    >
+      @for (item of filteredItems; track item) {
+        <option [value]="item" [selected]="isSelected(item)">
+          {{ labelOf(item) }}
+        </option>
+      }
+      @if (filteredItems.length == 0) {
+        <option disabled value="">Нет совпадений</option>
+      }
+    </select>
+  }
+</div>

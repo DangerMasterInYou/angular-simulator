@@ -1,3 +1,13 @@
+@mixin left-diagonal-img {
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+@mixin right-diagonal-img {
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
 html {
   color-scheme: light dark;
 }
@@ -78,34 +88,8 @@ main {
       margin-top: 41px;
       border-radius: 10px;
 
-      .input-container {
-        display: flex;
-        align-items: center;
-        height: 52px;
-        box-sizing: border-box;
-        padding: 16px 14px;
-        border: 1px;
-        border-color: var(--primary-border-color);
-        border-style: solid;
-        border-radius: 8px;
-        width: 270px;
-
-        input {
-          width: 100%;
-          border: none;
-          outline: none;
-          color: inherit;
-          background-color: transparent;
-        }
-
-        input::placeholder {
-          color: var(--secondary-text-color);
-        }
-      }
-
-      label {
-        display: block;
-        margin: 8px 8px 0 8px;
+      .matInputHidden {
+        width: 0;
       }
 
       #search-programm-btn {
@@ -116,7 +100,7 @@ main {
   }
 }
 
-#guide {
+.guide-wrap {
   display: flex;
   flex-direction: row;
   gap: 250px;
@@ -171,4 +155,101 @@ main {
   }
 }
 
-// ref file
+.programm-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  margin: 100px auto;
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    p {
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      &:hover {
+        border-radius: 1px;
+        border-color: red;
+        border-style: dotted;
+      }
+
+      .subtitle {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .li-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+        width: 580px;
+
+        &:hover {
+          background-color: yellowgreen;
+          opacity: 0.9;
+          border-radius: 16px;
+
+          h4 {
+            text-transform: uppercase;
+          }
+        }
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 4px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .programm__images {
+    width: 510px;
+    height: 510px;
+    display: grid;
+    grid-template: repeat(2, 250px) / repeat(2, 250px);
+    gap: 10px;
+
+    [class$="-img"] {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .left-diagonal-img {
+      @include left-diagonal-img()
+    }
+
+    .right-diagonal-img {
+      @include right-diagonal-img()
+    }
+  }
+}
+
+.custom-datepicker-overlay {
+  width: auto;
+  height: auto;
+}
+
+::ng-deep .custom-datepicker-overlay .mat-datepicker-content {
+  background-color: white !important;
+}

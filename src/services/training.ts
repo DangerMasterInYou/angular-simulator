@@ -1,12 +1,4 @@
-export interface IUser{
-  name: string,
-  age: number,
-  isPotato?: boolean
-}
-
-interface IStudent extends IUser{
-  universityName: string
-}
+import { IUser } from './interfaces/IUser';
 
 function sum(a: number, b: number): number {
   return a + b;
@@ -45,5 +37,3 @@ let users: IUser[] = [
 
 const sortedByAge = [...users].sort((a, b) => a.age - b.age);
 const sortedByName = [...users].sort((a, b) => a.name.localeCompare(b.name));
-
-// ref file

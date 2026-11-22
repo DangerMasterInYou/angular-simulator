@@ -37,5 +37,3 @@ export class Collection<T> {
   }
 
 }
-
-// ref file
